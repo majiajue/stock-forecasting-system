@@ -53,11 +53,13 @@ def attention_model():
 
     lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
     lstm_out = Dropout(0.3)(lstm_out)
+    lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
+    lstm_out = Dropout(0.3)(lstm_out)
     # lstm_out.shape: (batch_size, time_steps, input_dim)
     attention_mul = attention_3d_block2(lstm_out, SINGLE_ATTENTION_VECTOR=True)
     attention_mul = Flatten()(attention_mul)
 
-    output = Dense(1, activation='sigmoid')(attention_mul)
+    output = Dense(6, activation='sigmoid')(attention_mul)
     _model = Model(inputs=[inputs], outputs=output)
     return _model
 
@@ -76,6 +78,7 @@ if __name__ == '__main__':
     data = getData('000001.SZ, 000002.SZ')
 
     INPUT_DIMS = 6
+    OUTPUT_DIMS = 6
     TIME_STEPS = 40
     lstm_units = 64
 

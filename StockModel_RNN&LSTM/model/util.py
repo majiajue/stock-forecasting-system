@@ -64,7 +64,7 @@ def create_dataset(dataset, look_back=40):
     for i in range(look_back, dataset.shape[0]):
         X.append(dataset[i - look_back:i])
         # 取开盘价作为y轴
-        Y.append(dataset[i, 0])
+        Y.append(dataset[i, :])
 
     return np.array(X), np.array(Y)
 
