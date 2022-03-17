@@ -25,7 +25,9 @@ def hello_world():  # put application's code here
         with graph.as_default():
             result, _ = predict_future(model, input["data"], predictDate=input["predictDate"])
 
-        return flask.jsonify(result.tolist())
+        respond = dict()
+        respond.setdefault('data', result.tolist())
+        return flask.jsonify(respond)
     else:
         return 'GET'
 

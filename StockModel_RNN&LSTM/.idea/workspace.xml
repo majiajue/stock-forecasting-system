@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e30b2e22-5768-46e9-86f5-b9a5b9e2ed3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img/myplot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/预测数据.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/getData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/study.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +189,9 @@
       <module name="StockModel_RNN&amp;LSTM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/templates" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -251,12 +245,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Flask server.Flask (app.py)" />
       <item itemvalue="Python.StockModel_RNN&amp;LSTM" />
       <item itemvalue="Python.predict" />
       <item itemvalue="Python.getData" />
       <item itemvalue="Python.train" />
       <item itemvalue="Python.study" />
-      <item itemvalue="Flask server.Flask (app.py)" />
     </list>
     <recent_temporary>
       <list>
@@ -297,6 +291,9 @@
       <workItem from="1646812947292" duration="490000" />
       <workItem from="1646832311453" duration="4634000" />
       <workItem from="1646876295448" duration="14780000" />
+      <workItem from="1647053032255" duration="643000" />
+      <workItem from="1647500900502" duration="954000" />
+      <workItem from="1647510043420" duration="601000" />
     </task>
     <servers />
   </component>
@@ -321,7 +318,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/StockModel_RNN_LSTM$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1646893734096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/StockModel_RNN_LSTM$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1647501538892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/StockModel_RNN_LSTM$train.coverage" NAME="train Coverage Results" MODIFIED="1646382085189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/StockModel_RNN_LSTM$StockModel_RNN_LSTM.coverage" NAME="StockModel_RNN&amp;LSTM Coverage Results" MODIFIED="1645595494795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/StockModel_RNN_LSTM$getData.coverage" NAME="getData Coverage Results" MODIFIED="1646888080430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/templates" />
