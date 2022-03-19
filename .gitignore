@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Personal ###
+./stock-system-vue/node_modules/
+
+./StockPredict_System/.idea/
+./StockPredict_System/target/
+
+./StockModel_RNN&LSTM/__pycache__/
+./StockModel_RNN&LSTM/.idea/
