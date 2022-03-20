@@ -26,7 +26,7 @@ def hello_world():  # put application's code here
             result, _ = predict_future(model, input["data"], predictDate=input["predictDate"])
 
         respond = dict()
-        respond.setdefault('data', result.tolist())
+        respond.setdefault('data', result)
         return flask.jsonify(respond)
     else:
         return 'GET'

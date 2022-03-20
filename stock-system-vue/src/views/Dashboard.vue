@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span>股票代码：</span>
     <el-input
       placeholder="请输入股票代码"
       v-model="request.data"
@@ -10,16 +11,21 @@
     <el-button type="primary" size="medium" @click="getPredictData"
       >上传<i class="el-icon-upload el-icon--right"></i
     ></el-button>
-    <el-button type="primary" size="medium" @click="initCharts"
-      >test<i class="el-icon-upload el-icon--right"></i
-    ></el-button>
-    <div v-if="respond != null">
-      {{ respond[0] }}
+    <div id="charts">
+      <div class="charts_in" id="chart" style="width: 600px; height: 400px; margin: 0 auto"></div>
     </div>
-
-    <div id="main" style="width: 600px; height: 400px"></div>
+    <!-- <div v-if="respond != null">
+      {{ respond }}
+    </div> -->
   </div>
 </template>
+
+<style>
+#charts>.charts_in {
+  padding: 15px;
+}
+</style>
+
 <script>
 import HelloWorld from "@/components/HelloWorld.vue";
 
@@ -31,8 +37,8 @@ export default {
   data() {
     return {
       request: {
-        data: null,
-        predictDate: 10,
+        data: "601058.SH",
+        predictDate: 30,
       },
       respond: null,
     };
@@ -41,6 +47,7 @@ export default {
     async getPredictData() {
       this.$post("/", this.request).then((res) => {
         this.respond = res.data;
+        this.initCharts();
       });
       // const res=await this.$post('/',this.list)
       // console.log(res.result)
@@ -48,30 +55,42 @@ export default {
     },
     async initCharts() {
       // 基于准备好的dom，初始化echarts实例
-      var myChart = this.$echarts.init(document.getElementById("main"));
-
+      var myChart = this.$echarts.init(
+        document.getElementById("chart"),
+        "light"
+      );
       // 指定图表的配置项和数据
       var option = {
-        title: {
-          text: "ECharts 入门示例",
-        },
         tooltip: {},
-        legend: {
-          data: ["销量"],
+        legend: {},
+        xAxis: { name: "日期", type: "category" },
+        yAxis: { name: "价格", scale: true },
+        dataset: {
+          source: this.respond,
         },
-        xAxis: {
-          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+        title: {
+          text: "股价",
+          // x: "center",
         },
-        yAxis: {},
         series: [
           {
-            name: "销量",
-            type: "bar",
-            data: [5, 20, 36, 10, 10, 20],
+            type: "line",
+            name: "开盘价",
+            encode: {
+              x: 0,
+              y: 1,
+            },
+          },
+          {
+            type: "line",
+            name: "收盘价",
+            encode: {
+              x: 0,
+              y: 2,
+            },
           },
         ],
       };
-
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
     },

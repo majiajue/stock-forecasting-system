@@ -1,4 +1,7 @@
 import warnings
+
+import numpy as np
+
 warnings.filterwarnings("ignore")
 
 from keras.layers import Conv1D, Bidirectional, Multiply
@@ -43,7 +46,6 @@ def attention_3d_block2(inputs, SINGLE_ATTENTION_VECTOR=False):
     return output_attention_mul
 
 
-
 # 函数式 API。中文文档：https://keras.io/zh/models/model/
 def attention_model():
     inputs = Input(shape=(TIME_STEPS, INPUT_DIMS))
@@ -64,23 +66,35 @@ def attention_model():
     return _model
 
 
-def getData(tsCode):
+def getData():
     ts.set_token('0552d7adcfe8c321bd512ea8e7ff66c69375a9aeeb567fbfc7440cd4')
 
+    # 获取数据连接
+    ts.set_token('0552d7adcfe8c321bd512ea8e7ff66c69375a9aeeb567fbfc7440cd4')
     pro = ts.pro_api()
-    df1 = pro.daily(ts_code=tsCode, end_date='20220101')
-    df1 = df1.drop(['ts_code', 'trade_date', 'high', 'low', 'pre_close'], axis=1)
-    return np.array(df1)
+    # 查询当前所有正常上市交易的股票列表
+    # SH沪股通SZ深股通
+    df = pro.hs_const(hs_type='SH')
+    df = df[0:20]
+
+    dataset = np.empty((0, 6), dtype=float)
+    for name in np.array(df['ts_code']):
+        data = pro.daily(ts_code=name, start_date='20000101', end_date='20220101')
+        data = data.drop(['ts_code', 'trade_date', 'high', 'low', 'pre_close'], axis=1)
+        dataset = np.concatenate((dataset, data), axis=0)
+
+    return np.array(dataset)
 
 
 if __name__ == '__main__':
     # 加载数据
-    data = getData('000001.SZ, 000002.SZ')
+    data = getData()
+    print(data.shape)
 
     INPUT_DIMS = 6
     OUTPUT_DIMS = 6
     TIME_STEPS = 40
-    lstm_units = 64
+    lstm_units = 32
 
     # 归一化
     data, normalize = NormalizeMult(data)
@@ -89,7 +103,7 @@ if __name__ == '__main__':
     model = attention_model()
     model.summary()
     model.compile(optimizer='adam', loss='mse')
-    model.fit([train_X], train_Y, epochs=20, batch_size=64, validation_split=0.1)
+    model.fit([train_X], train_Y, epochs=25, batch_size=64, validation_split=0.1)
 
     # 保存结果
     model.save("model.h5")

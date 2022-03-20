@@ -3,7 +3,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from model.util import create_dataset, FNormalizeMult, FNormalizeMultY, NormalizeMult
-
+import datetime
 import tushare as ts
 import matplotlib.pyplot as plt
 import numpy as np
@@ -54,7 +54,7 @@ def predict_future(model, tsCode, startDate='20220101', predictDate=30):
     for i in range(predictDate):
         _result = model.predict(data[-1:, :, :])
         _allResult = np.append(_allResult, _result)
-        # print(type(data[:1, :, :]))
+
         temp = data[-1:, :, :][0]
         temp = np.insert(temp, temp.shape[0], _result, axis=0)
         temp = temp[1:, :]
@@ -65,6 +65,22 @@ def predict_future(model, tsCode, startDate='20220101', predictDate=30):
     # 反归一化
     _result = FNormalizeMult(_allResult, normalize)
 
+    # 增加日期
+    time = datetime.datetime.now()
+    cnt = 0
+    date = []
+    while cnt < predictDate:
+        if time.isocalendar()[2] > 5:
+            time = time + datetime.timedelta(days=1)
+        else:
+            date.insert(len(date), time.strftime("%m-%d"))
+            time = time + datetime.timedelta(days=1)
+            cnt = cnt + 1
+
+    _result = _result.tolist()
+    for i in range(predictDate):
+        _result[i].insert(0, date[i])
+
     return _result, _
 
 
@@ -74,17 +90,17 @@ if __name__ == '__main__':
     # normalize = np.load("normalize.npy")
     model = load_model("model.h5")
     tsCode = "601058.SH"
-    predictData = 500
+    predictData = 5
 
     # 获得预测数据
     result, real = predict_future(model, tsCode, predictDate=predictData)
 
     # plt可视化
-    plt.figure(figsize=(14, 5))
+    # plt.figure(figsize=(14, 5))
     # plt.plot(real[:, 1], color='red', label='Real ' + tsCode + ' Price')
-    plt.plot(result[:, 1], color='blue', label='Predicted ' + tsCode + ' Price')
-    plt.title('Stock Price Prediction')
-    plt.xlabel('Time')
-    plt.ylabel('Stock Price')
-    plt.legend()
-    plt.show()
+    # plt.plot(result[:, 1], color='blue', label='Predicted ' + tsCode + ' Price')
+    # plt.title('Stock Price Prediction')
+    # plt.xlabel('Time')
+    # plt.ylabel('Stock Price')
+    # plt.legend()
+    # plt.show()
