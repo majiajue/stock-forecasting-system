@@ -4,7 +4,7 @@ import numpy as np
 
 warnings.filterwarnings("ignore")
 
-from keras.layers import Conv1D, Bidirectional, Multiply
+from keras.layers import Conv1D, Bidirectional, Multiply, MaxPooling1D
 from keras.layers.core import *
 from keras.layers.recurrent import LSTM
 from keras.models import *
@@ -29,8 +29,10 @@ def attention_3d_block(inputs, SINGLE_ATTENTION_VECTOR=False):
     output_attention_mul = Multiply()([inputs, a_probs])
     return output_attention_mul
 
-
-# 注意力机制的另一种写法，适合上述报错使用。来源:https://blog.csdn.net/uhauha2929/article/details/80733255
+s
+# 注意力机制的另一种写法，适合上述报错使用。
+# 借鉴:https://blog.csdn.net/weixin_41888257/article/details/114888547
+# https://github.com/philipperemy/keras-attention-mechanism
 def attention_3d_block2(inputs, SINGLE_ATTENTION_VECTOR=False):
     time_steps = K.int_shape(inputs)[1]
     input_dim = K.int_shape(inputs)[2]
@@ -50,17 +52,22 @@ def attention_3d_block2(inputs, SINGLE_ATTENTION_VECTOR=False):
 def attention_model():
     inputs = Input(shape=(TIME_STEPS, INPUT_DIMS))
 
-    x = Conv1D(filters=64, kernel_size=1, activation='relu')(inputs)  # , padding = 'same'
+    # 特征提取
+    x = Conv1D(filters=64, kernel_size=2, activation='relu')(inputs)  # , padding = 'same'
     x = Dropout(0.3)(x)
+    x = MaxPooling1D(pool_size=2, strides=None, padding='valid')(x)
 
+    # 时序分析
     lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
     lstm_out = Dropout(0.3)(lstm_out)
-    lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
-    lstm_out = Dropout(0.3)(lstm_out)
+    # lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
+    # lstm_out = Dropout(0.3)(lstm_out)
     # lstm_out.shape: (batch_size, time_steps, input_dim)
-    attention_mul = attention_3d_block2(lstm_out, SINGLE_ATTENTION_VECTOR=True)
-    attention_mul = Flatten()(attention_mul)
 
+    # 注意力机制
+    attention_mul = attention_3d_block2(lstm_out, SINGLE_ATTENTION_VECTOR=True)
+
+    attention_mul = Flatten()(attention_mul)
     output = Dense(6, activation='sigmoid')(attention_mul)
     _model = Model(inputs=[inputs], outputs=output)
     return _model
@@ -75,11 +82,12 @@ def getData():
     # 查询当前所有正常上市交易的股票列表
     # SH沪股通SZ深股通
     df = pro.hs_const(hs_type='SH')
-    df = df[0:20]
+    df = df[0:1]
 
     dataset = np.empty((0, 6), dtype=float)
     for name in np.array(df['ts_code']):
         data = pro.daily(ts_code=name, start_date='20000101', end_date='20220101')
+        col = [column for column in data]
         data = data.drop(['ts_code', 'trade_date', 'high', 'low', 'pre_close'], axis=1)
         dataset = np.concatenate((dataset, data), axis=0)
 

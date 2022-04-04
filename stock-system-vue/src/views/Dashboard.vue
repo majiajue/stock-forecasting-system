@@ -12,17 +12,17 @@
       >上传<i class="el-icon-upload el-icon--right"></i
     ></el-button>
     <div id="charts">
-      <div class="charts_in" id="chart" style="width: 600px; height: 400px; margin: 0 auto"></div>
+      <div class="charts_in" id="chart"></div>
     </div>
-    <!-- <div v-if="respond != null">
-      {{ respond }}
-    </div> -->
   </div>
 </template>
 
 <style>
-#charts>.charts_in {
+#charts > .charts_in {
   padding: 15px;
+  width: 1200px;
+  height: 800px;
+  margin: auto;
 }
 </style>
 
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     async getPredictData() {
-      this.$post("/", this.request).then((res) => {
+      this.$post_model("/", this.request).then((res) => {
         this.respond = res.data;
         this.initCharts();
       });

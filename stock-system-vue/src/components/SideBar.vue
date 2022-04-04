@@ -53,10 +53,10 @@
 
 <style>
 /* :not() 用来匹配不符合一组选择器的元素 */
-/* 在 separated 模式下，相邻的单元格都拥有独立的边框；在 collapsed 模式下，相邻单元格共享边框 */
+/*  在 separated 模式下，相邻的单元格都拥有独立的边框；在 collapsed 模式下，相邻单元格共享边框 */
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
+  height: 600px;
 }
 /* 去掉原有链接文字下划线 */
 a {
