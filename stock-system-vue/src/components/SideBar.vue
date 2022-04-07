@@ -2,16 +2,28 @@
   <el-row class="tac">
     <el-col :span="12">
       <h5>导航栏</h5>
-      <el-menu
-        default-active="2"
-        class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
-      >
-        <el-submenu index="1">
+      <el-menu class="el-menu-vertical-demo"
+               @open="handleOpen"
+               @close="handleClose">
+
+        <router-link to="/qs">
+          <el-menu-item index="1">
+            <i class="el-icon-menu"></i>
+            <span slot="title">调查问卷</span>
+          </el-menu-item>
+        </router-link>
+
+        <router-link to="/dashboard">
+          <el-menu-item index="2">
+            <i class="el-icon-document"></i>
+            <span slot="title">股票预测</span>
+          </el-menu-item>
+        </router-link>
+
+        <el-submenu index="3">
           <template slot="title">
-            <i class="el-icon-location"></i>
-            <span>导航一</span>
+            <i class="el-icon-setting"></i>
+            <span slot="title">设置</span>
           </template>
           <el-menu-item-group>
             <template slot="title">分组一</template>
@@ -26,25 +38,7 @@
             <el-menu-item index="1-4-1">选项1</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <router-link to="/qs1">
-          <el-menu-item index="2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">调查问卷</span>
-          </el-menu-item>
-        </router-link>
-        <router-link to="/dashboard">
-          <!-- disabled -->
-          <el-menu-item index="3">
-            <i class="el-icon-document"></i>
-            <span slot="title">股票预测</span>
-          </el-menu-item>
-        </router-link>
-        <router-link to="/about">
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">设置</span>
-          </el-menu-item>
-        </router-link>
+
       </el-menu>
     </el-col>
   </el-row>
@@ -71,10 +65,11 @@ a {
 <script>
 export default {
   methods: {
-    handleOpen(key, keyPath) {
+    // 折叠 handle 打开时
+    handleOpen (key, keyPath) {
       console.log(key, keyPath);
     },
-    handleClose(key, keyPath) {
+    handleClose (key, keyPath) {
       console.log(key, keyPath);
     },
   },

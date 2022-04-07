@@ -8,7 +8,10 @@
     </el-input>
     <el-button type="primary"
                size="medium"
-               @click="getPredictData">上传<i class="el-icon-upload el-icon--right"></i></el-button>
+               @click="getPredictData">
+      上传
+      <i class="el-icon-upload el-icon--right"></i>
+    </el-button>
     <div id="charts"
          v-if="this.respond!=null">
       <div class="charts_in"

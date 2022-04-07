@@ -31,6 +31,15 @@
       </el-card>
 
     </div>
+
+    <div>
+      <el-button type="primary"
+                 size="medium"
+                 @click="submit">
+        提交问卷
+        <i class="el-icon-finished el-icon--right"></i>
+      </el-button>
+    </div>
   </el-row>
 </template>
 
@@ -169,6 +178,11 @@ export default {
       total_score: 0,
     };
   },
+  methods: {
+    submit () {
+      console.log('提交')
+    }
+  }
 };
 </script>
 
