@@ -3,11 +3,14 @@ package com.stockpredict.system;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author WangZheWen
+ */
 @SpringBootApplication
-public class StockPredictSystemJ2Application {
+public class StockPredictSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StockPredictSystemJ2Application.class, args);
+        SpringApplication.run(StockPredictSystemApplication.class, args);
     }
 
 }

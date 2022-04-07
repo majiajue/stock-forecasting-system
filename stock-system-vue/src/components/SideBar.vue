@@ -26,23 +26,23 @@
             <el-menu-item index="1-4-1">选项1</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <router-link to="/">
+        <router-link to="/qs1">
           <el-menu-item index="2">
             <i class="el-icon-menu"></i>
-            <span slot="title">Home</span>
+            <span slot="title">调查问卷</span>
           </el-menu-item>
         </router-link>
         <router-link to="/dashboard">
           <!-- disabled -->
           <el-menu-item index="3">
             <i class="el-icon-document"></i>
-            <span slot="title">Dashboard</span>
+            <span slot="title">股票预测</span>
           </el-menu-item>
         </router-link>
         <router-link to="/about">
           <el-menu-item index="4">
             <i class="el-icon-setting"></i>
-            <span slot="title">About</span>
+            <span slot="title">设置</span>
           </el-menu-item>
         </router-link>
       </el-menu>

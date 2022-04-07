@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10a58e25-2874-4ebd-9a39-b3cc547afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/domain/ResResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/enums/ResResultCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/test/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/test/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/test/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/test/SmallCat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/normalize.npy" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/normalize.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/shiro.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/config/modelConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/utils/myPlugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/utils/myPlugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/HomeView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/StockPredictSystemJ2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/StockPredictSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stockpredict/system/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/开题报告.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/开题报告.doc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +56,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../GitLab/nlogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -85,6 +69,13 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.stockpredict.system.enums" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -96,6 +87,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockPredictSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="StockPredict_System" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stockpredict.system.StockPredictSystemApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,6 +126,7 @@
       <workItem from="1648388481390" duration="621000" />
       <workItem from="1648394533152" duration="48000" />
       <workItem from="1648521854444" duration="39000" />
+      <workItem from="1649214736562" duration="3852000" />
     </task>
     <servers />
   </component>

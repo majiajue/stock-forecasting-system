@@ -30,6 +30,13 @@
 body > .el-container {
   margin-bottom: 40px;
 }
+::-webkit-scrollbar {
+  width: 0 !important;
+}
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0;
+}
 </style>
 
 <script>
