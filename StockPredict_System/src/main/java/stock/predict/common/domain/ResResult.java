@@ -1,7 +1,7 @@
-package com.stockpredict.system.domain;
+package stock.predict.common.domain;
 
-import com.stockpredict.system.enums.ResResultCodeEnum;
 import lombok.Data;
+import stock.predict.common.enums.ResResultCodeEnum;
 
 import java.io.Serializable;
 
@@ -13,13 +13,21 @@ import java.io.Serializable;
 @Data
 public class ResResult<T> implements Serializable {
 
-    /** 是否成功 **/
+    /**
+     * 是否成功
+     **/
     private boolean success;
-    /** 消息状态码 */
+    /**
+     * 消息状态码
+     */
     private int code;
-    /** 消息内容 */
+    /**
+     * 消息内容
+     */
     private String msg;
-    /** 具体数据 */
+    /**
+     * 具体数据
+     */
     private T value;
 
     public ResResult() {
@@ -32,7 +40,7 @@ public class ResResult<T> implements Serializable {
         this.value = value;
     }
 
-    public ResResult(String message , T value) {
+    public ResResult(String message, T value) {
         this.success = true;
         this.code = ResResultCodeEnum.SUCCESS.getCode();
         this.msg = message;
@@ -57,7 +65,7 @@ public class ResResult<T> implements Serializable {
         return new ResResult<>(null);
     }
 
-    public static <T> ResResult<T> success(String message,T value) {
+    public static <T> ResResult<T> success(String message, T value) {
         return new ResResult<>(null);
     }
 

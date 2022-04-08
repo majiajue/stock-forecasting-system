@@ -1,4 +1,4 @@
-package com.stockpredict.system.enums;
+package stock.predict.common.enums;
 
 
 /**
