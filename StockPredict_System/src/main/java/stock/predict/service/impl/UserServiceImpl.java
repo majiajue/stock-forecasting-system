@@ -22,6 +22,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return this.lambdaQuery()
                 .eq(User::getName, name)
                 .eq(User::getPassword, password)
-                .one();
+                .one()
+                .setPassword(null);
     }
+
 }

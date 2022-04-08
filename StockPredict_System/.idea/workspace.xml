@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="" />
+    <list default="true" id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +24,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://D:/Tools/repository/com/baomidou/mybatis-plus-core/3.5.1/mybatis-plus-core-3.5.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,6 +44,7 @@
     </option>
   </component>
   <component name="ProjectId" id="27UpWcWl7H9Fl4N75hM4tGdpzsN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,6 +62,9 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -110,6 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1649384553484</updated>
       <workItem from="1649384554812" duration="4333000" />
+      <workItem from="1649395230593" duration="3154000" />
     </task>
     <servers />
   </component>
