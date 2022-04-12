@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row v-show="this.questionnaire.length!=0">
     <div class="qs"
          v-for="(item, i) in questionnaire"
          :key="i">
@@ -46,107 +46,12 @@
 <script>
 export default {
   name: "qs1",
-  created: function () {
-    this.questionnaire = [
-      {
-        title: "1、您投资中可耐受何种程度的风险波动",
-        type: "radio",
-        data: [
-          { value: '1', des: "低" },
-          { value: '2', des: "中" },
-          { value: '3', des: "高" },
-        ]
-      },
-      {
-        title: "2、您的投资目标是",
-        type: "radio",
-        data: [
-          { value: '1', des: "尽可能保证本金安全，不在乎收益率比较低" },
-          { value: '2', des: "追求一定的收益，可以承担一定的投资风险" },
-          { value: '3', des: "追求较多的收益产生，可以承担较大的投资风险" },
-        ]
-      },
-      {
-        title: "3、您可以接受的最长投资期限为",
-        type: "radio",
-        data: [
-          { value: '1', des: "1年以内" },
-          { value: '2', des: "1-3年" },
-          { value: '3', des: "3-5年" },
-          { value: '4', des: "5年以上" },
-        ]
-      },
-      {
-        title: "4、您想投资什么产品",
-        type: "checkbox",
-        data: [
-          { value: '0.5', des: "存款和国债" },
-          { value: '1', des: "债券保险等固定收益类" },
-          { value: '2', des: "股票基金等权益类" },
-          { value: '3', des: "商品及衍生品类和其他高风险产品" },
-        ]
-      },
-      {
-        title: "5.您的投资知识可描述为",
-        type: "radio",
-        data: [
-          { value: '1', des: "有限" },
-          { value: '2', des: "一般" },
-          { value: '3', des: "丰富" },
-        ]
-      },
-      {
-        title: "6、您有多少年的投资经验",
-        type: "radio",
-        data: [
-          { value: '1', des: "1年以内" },
-          { value: '2', des: "1-3年" },
-          { value: '3', des: "3-5年" },
-          { value: '4', des: "5年以上" },
-        ]
-      },
-      {
-        title: "7、您的投资经验有哪些",
-        type: "checkbox",
-        data: [
-          { value: '0.5', des: "出银行存储外，基本没有其他投资经验" },
-          { value: '1', des: "购买过债券、保险等理财产品" },
-          { value: '2', des: "参与过股票、基金等产品的交易" },
-          { value: '3', des: "参与过权证、期货、期权等产品的交易" },
-        ]
-      },
-      {
-        title: "8、您每月开销最大的是",
-        type: "radio",
-        data: [
-          { value: '1', des: "还信用卡等消费" },
-          { value: '2', des: "还车贷、房贷" },
-          { value: '3', des: "日常花销" },
-        ]
-      },
-      {
-        title: "9、您的收入主要来自",
-        type: "radio",
-        data: [
-          { value: '1', des: "工资奖金、劳务报酬" },
-          { value: '2', des: "生产经营所得" },
-          { value: '3', des: "利息、股息、转让等金融性资产收入" },
-          { value: '4', des: "出租、出售房地产等非金融收入" },
-        ]
-      },
-      {
-        title: "10、您的工作是",
-        type: "radio",
-        data: [
-          { value: '5', des: "党政机关及事业单位" },
-          { value: '4', des: "一般企业单位" },
-          { value: '3', des: "蓝领" },
-          { value: '0.5', des: "在校学生" },
-          { value: '1.5', des: "自由职业" },
-          { value: '1', des: "无固定职业" },
-        ]
-      },
-    ];
+  mounted: function () {
+    this.$get("/questionnaire/get").then((result) => {
+      this.questionnaire = result
+    }).catch((err) => {
+      console.error(err);
+    });
 
     // 初始化问卷参数
     for (var i = 0; i < this.questionnaire.length; i++) {
@@ -171,6 +76,13 @@ export default {
     }
 
   },
+  computed: {
+    user () {
+      return JSON.parse(
+        window.sessionStorage.getItem("user")
+      )
+    }
+  },
   data () {
     return {
       questionnaire: [],
@@ -179,9 +91,82 @@ export default {
     };
   },
   methods: {
+
     submit () {
-      console.log('提交')
+      // 弹窗
+      this.$confirm('您将提交问卷回答, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        if (this.check(this.answer)) {
+
+          var score = this.score(this.answer);
+          var score_all = this.score_all(this.questionnaire);
+          this.$get("/user/questionnaire", { score: score == 0 ? 0 : (score / score_all).toFixed(2), userId: this.user.id }).then((result) => {
+            this.$message({
+              type: 'success',
+              message: '提交成功!'
+            });
+            var user = JSON.parse(
+              window.sessionStorage.getItem("user")
+            )
+            user.score = score == 0 ? 0 : (score / score_all).toFixed(2);
+            window.sessionStorage.setItem("user", JSON.stringify(user));
+            this.$router.replace({ path: '/' }).then(
+              location.reload()
+            )
+
+          }).catch((err) => {
+            console.error(err);
+          });
+        } else {
+          this.$message({
+            type: 'info',
+            message: '请填写完所有问题后提交'
+          });
+        }
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '提交已取消'
+        });
+      });
+    },
+
+    score (arr) {
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+          sum += this.score(arr[i])
+        } else {
+          sum += parseInt(arr[i]);
+        }
+      }
+      return sum;
+    },
+
+    score_all (arr) {
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += arr[i].score;
+      }
+      return sum;
+    },
+
+    check (arr) {
+      for (var i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+          this.score(arr[i])
+        } else {
+          if (arr[i] == null) {
+            return false
+          }
+        }
+      }
+      return true;
     }
+
   }
 };
 </script>

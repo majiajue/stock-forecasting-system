@@ -1,8 +1,8 @@
-package stock.predict.dao.mapper;
+package com.stockpredict.system.dao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.springframework.stereotype.Repository;
-import stock.predict.dao.entity.User;
+import com.stockpredict.system.dao.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -12,7 +12,7 @@ import stock.predict.dao.entity.User;
  * @author wangzhewen
  * @since 2022-04-07
  */
-@Repository
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
 
 }

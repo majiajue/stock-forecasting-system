@@ -6,7 +6,7 @@ import 'nprogress/nprogress.css'
 // 初始化一个axios对象
 var instance = axios.create({
   // 接口地址根路径
-  baseURL: '/api/',
+  baseURL: '/spring/',
   // 超时时间
   timeout: 3000
 })
@@ -67,17 +67,6 @@ const del = async function (url, params) {
   })
   return data
 }
-
-var instance_model = axios.create({
-  baseURL: '/model/',
-  timeout: 3000,
-});
-const post_model = async function (url, params) {
-  const {
-    data
-  } = await instance_model.post(url, params)
-  return data
-}
 // 创建一个将token信息保存到请求头的方法
 // const setToken = function (token) {
 //   axios.defaults.headers.common['token'] = sessionStorage.getItem('token')
@@ -88,5 +77,4 @@ export {
   post,
   put,
   del,
-  post_model
 }

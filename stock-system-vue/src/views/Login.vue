@@ -1,30 +1,38 @@
 <template>
   <div class="login-container">
     <el-form :model="ruleForm"
-             :rules="rules2"
+             :rules="rules"
              status-icon
              ref="ruleForm"
              label-position="left"
-             label-width="0px"
+             label-width="70px"
              class="demo-ruleForm login-page">
       <h3 class="title">
         <i class="el-icon-cpu el-icon--left"></i>系统登录
+        <el-button round
+                   size="mini"
+                   @click="to_register">
+          注册
+        </el-button>
       </h3>
-      <el-form-item prop="username">
+      <el-form-item prop="username"
+                    label="用户名">
         <el-input type="text"
                   v-model="ruleForm.username"
                   auto-complete="off"
-                  placeholder="用户名"></el-input>
+                  placeholder="请填写用户名"></el-input>
       </el-form-item>
-      <el-form-item prop="password">
+      <el-form-item prop="password"
+                    label="密码">
         <el-input type="password"
                   v-model="ruleForm.password"
                   auto-complete="off"
-                  placeholder="密码"></el-input>
+                  placeholder="请填写密码"></el-input>
       </el-form-item>
       <el-checkbox v-model="checked"
                    class="rememberme">记住密码</el-checkbox>
-      <el-form-item style="width: 100%">
+      <el-form-item style="width: 100%"
+                    label-width="0px">
         <el-button type="primary"
                    style="width: 100%"
                    @click="handleSubmit"
@@ -46,7 +54,7 @@ export default {
         password: "123456",
       },
       // 表单验证规则
-      rules2: {
+      rules: {
         username: [
           {
             required: true,
@@ -73,21 +81,30 @@ export default {
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
           this.logining = true;
-          if (this.ruleForm.username === "admin" && this.ruleForm.password === "123456") {
-            this.logining = false;
-            sessionStorage.setItem("user", this.ruleForm);
-            this.$router.push({ path: "/" });
-          } else {
-            this.logining = false;
-            this.$alert("用户名或密码错误", "登陆失败", {
-              confirmButtonText: "ok",
-            });
-          }
+          // 获得用户数据
+          this.$get("/user/login", this.ruleForm).then((result) => {
+            if (result.success) {
+              var user = result.value
+              sessionStorage.setItem("user", JSON.stringify(user));
+              this.$router.push({ path: "/" });
+            } else {
+              this.$alert("用户名或密码错误", "登陆失败", {
+                confirmButtonText: "ok",
+              });
+            }
+          }).catch((err) => {
+            console.error(err);
+          });
+          this.logining = false;
         } else {
-          console.log("登陆出错!");
+          console.error("登陆出错!");
           return false;
         }
       });
+    },
+
+    to_register () {
+      this.$router.push({ path: "/register" });
     },
   },
 };
@@ -111,5 +128,8 @@ export default {
 label.el-checkbox.rememberme {
   margin: 0px 0px 15px;
   text-align: left;
+}
+.title > .el-button {
+  float: right;
 }
 </style>

@@ -3,21 +3,33 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+  {
     path: '/login',
     name: 'login',
     component: () => import('../views/Login.vue')
   },
   {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/Register.vue')
+  },
+  {
     path: '/',
     name: 'main',
+    redirect:'home',
     meta: {
       requireAuth: true
     },
     component: () => import('../views/Main.vue'),
-    children: [{
+    children: [
+      {
         path: 'dashboard',
         component: () => import('../views/Dashboard.vue')
+      },
+      {
+        path: 'home',
+        component: () => import('../views/Home.vue')
       },
       {
         path: 'about',
@@ -26,6 +38,10 @@ const routes = [{
       {
         path: 'qs',
         component: () => import('../views/Questionnaire.vue')
+      },
+      {
+        path: 'edit',
+        component: () => import('../views/EditInfo.vue')
       }
     ]
   },

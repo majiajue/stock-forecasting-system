@@ -19,15 +19,6 @@ module.exports = defineConfig({
         //接受对方是https的接口
         secure: false
       },
-      '/model': {
-        target: 'http://127.0.0.1:5000',
-        changeOrigin: true,
-        ws: true,
-        pathRewrite: {
-          '^/model': ''
-        },
-        secure: false
-      },
     }
   }
 })

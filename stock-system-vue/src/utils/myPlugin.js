@@ -3,7 +3,6 @@ import {
   post,
   put,
   del, 
-  post_model
 } from './request'
 // 定义一个插件
 export default {
@@ -25,9 +24,6 @@ export default {
         },
         $del(url, params) {
           return del(url, params)
-        },
-        $post_model(url, params) {
-          return post_model(url, params)
         },
       }
     })

@@ -74,7 +74,7 @@ def attention_model():
 
 
 def getData():
-    ts.set_token('0552d7adcfe8c321bd512ea8e7ff66c69375a9aeeb567fbfc7440cd4')
+    # ts.set_token('0552d7adcfe8c321bd512ea8e7ff66c69375a9aeeb567fbfc7440cd4')
 
     # 获取数据连接
     ts.set_token('0552d7adcfe8c321bd512ea8e7ff66c69375a9aeeb567fbfc7440cd4')
@@ -87,8 +87,9 @@ def getData():
     dataset = np.empty((0, 6), dtype=float)
     for name in np.array(df['ts_code']):
         data = pro.daily(ts_code=name, start_date='20000101', end_date='20220101')
-        col = [column for column in data]
+        # col = [column for column in data]
         data = data.drop(['ts_code', 'trade_date', 'high', 'low', 'pre_close'], axis=1)
+        # open 开盘价、close 收盘价、change 涨跌额、pct_chg 涨跌幅、vol 成交量、amount 成交额（千元）
         dataset = np.concatenate((dataset, data), axis=0)
 
     return np.array(dataset)

@@ -1,5 +1,6 @@
 package stock.predict.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import stock.predict.dao.entity.User;
@@ -22,8 +23,32 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return this.lambdaQuery()
                 .eq(User::getName, name)
                 .eq(User::getPassword, password)
-                .one()
-                .setPassword(null);
+                .one();
+    }
+
+    @Override
+    public boolean updateScore(Double score, Long userId) {
+        return this.lambdaUpdate()
+                .eq(User::getId, userId)
+                .set(User::getScore, score)
+                .update();
+    }
+
+    @Override
+    public User getByName(String name) {
+        return this.lambdaQuery()
+                .eq(User::getName, name)
+                .one();
+    }
+
+    @Override
+    public boolean updateById(User user) {
+        return this.lambdaUpdate()
+                .eq(User::getId, user.getId())
+                .set(ObjectUtil.isNotEmpty(user.getName()), User::getName, user.getName())
+                .set(ObjectUtil.isNotEmpty(user.getPassword()), User::getPassword, user.getPassword())
+                .set(ObjectUtil.isNotEmpty(user.getBirthday()), User::getBirthday, user.getBirthday())
+                .update();
     }
 
 }
