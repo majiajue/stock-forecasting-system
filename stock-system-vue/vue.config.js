@@ -4,15 +4,19 @@ const {
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
+    port: 8081,
     proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:5000', // 接口地址
-        changeOrigin: true, // 是否跨域
+      '/spring': {
+        // 接口地址
+        target: 'http://127.0.0.1:8080',
+        // 是否跨域
+        changeOrigin: true,
         ws: true,
         pathRewrite: {
-          // 转发
-          '^/api': ''
+          // 忽略
+          '^/spring': ''
         },
+        //接受对方是https的接口
         secure: false
       },
     }

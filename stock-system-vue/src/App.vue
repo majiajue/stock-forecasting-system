@@ -1,15 +1,5 @@
 <template>
-  <div id="app">
-    <Main />
+  <div id="app" style="height: 100%">
+    <router-view />
   </div>
 </template>
-
-<script>
-import Main from "@/views/Main.vue";
-
-export default {
-  components: {
-    Main,
-  },
-};
-</script>

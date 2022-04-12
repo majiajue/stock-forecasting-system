@@ -4,30 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a58e25-2874-4ebd-9a39-b3cc547afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/.idea/StockModel_RNN&amp;LSTM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/.idea/StockModel_RNN&amp;LSTM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/GOOG.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/predict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/stock_model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/train_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/.idea/lab01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../getData/getData.py" beforeDir="false" />
+    <list default="true" id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/ModelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/QuestionnaireController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/questionnaire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/utils/myPlugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/utils/myPlugin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Questionnaire.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Questionnaire.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://D:/Tools/repository/com/baomidou/mybatis-plus-core/3.5.1/mybatis-plus-core-3.5.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,35 +60,124 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Application/apache-maven-3.8.4-bin/apache-maven-3.8.4" />
         <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\Application\apache-maven-3.8.4-bin\apache-maven-3.8.4\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="25Uxx7f3pICieMV0gjkR3SQa2pr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="27UpWcWl7H9Fl4N75hM4tGdpzsN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BackUps/StockPredict_System" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\StockPredict_System\src\main\java\stock\predict\common" />
+      <recent name="E:\StockPredict_System\src\main\resources" />
+      <recent name="E:\StockPredict_System\src\main\java\stock\predict\service" />
+      <recent name="E:\StockPredict_System\src\main\java\stock\predict\dao\mapper" />
+      <recent name="E:\StockPredict_System\src\main\java\stock\predict\dao\controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SystemApplication">
+    <configuration name="SampleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockPredict_System" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SampleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleTest.testSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockPredict_System" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SampleTest" />
+      <option name="METHOD_NAME" value="testSelect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="StockPredict_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stock.predict.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="stock.predict.SystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SystemApplication" />
+        <item itemvalue="JUnit.SampleTest" />
+        <item itemvalue="JUnit.SampleTest.testSelect" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="10a58e25-2874-4ebd-9a39-b3cc547afb6f" name="Changes" comment="" />
-      <created>1645595716674</created>
+      <changelist id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="" />
+      <created>1649384553484</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1645595716674</updated>
-      <workItem from="1645595721077" duration="58000" />
+      <updated>1649384553484</updated>
+      <workItem from="1649384554812" duration="4333000" />
+      <workItem from="1649395230593" duration="3154000" />
+      <workItem from="1649645811175" duration="5189000" />
+      <workItem from="1649659033890" duration="2864000" />
+      <workItem from="1649662477517" duration="121000" />
+      <workItem from="1649662622872" duration="91000" />
+      <workItem from="1649662737326" duration="17000" />
+      <workItem from="1649662778386" duration="3527000" />
+      <workItem from="1649670553494" duration="1346000" />
+      <workItem from="1649728334627" duration="1207000" />
+      <workItem from="1649729582578" duration="4772000" />
+      <workItem from="1649747820410" duration="4318000" />
+      <workItem from="1649764696066" duration="1766000" />
+      <workItem from="1649768950698" duration="316000" />
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="application.yml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
