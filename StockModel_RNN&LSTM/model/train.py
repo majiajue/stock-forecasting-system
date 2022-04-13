@@ -29,7 +29,7 @@ def attention_3d_block(inputs, SINGLE_ATTENTION_VECTOR=False):
     output_attention_mul = Multiply()([inputs, a_probs])
     return output_attention_mul
 
-s
+
 # 注意力机制的另一种写法，适合上述报错使用。
 # 借鉴:https://blog.csdn.net/weixin_41888257/article/details/114888547
 # https://github.com/philipperemy/keras-attention-mechanism
@@ -82,7 +82,7 @@ def getData():
     # 查询当前所有正常上市交易的股票列表
     # SH沪股通SZ深股通
     df = pro.hs_const(hs_type='SH')
-    df = df[0:1]
+    df = df[0:30]
 
     dataset = np.empty((0, 6), dtype=float)
     for name in np.array(df['ts_code']):
@@ -112,7 +112,7 @@ if __name__ == '__main__':
     model = attention_model()
     model.summary()
     model.compile(optimizer='adam', loss='mse')
-    model.fit([train_X], train_Y, epochs=25, batch_size=64, validation_split=0.1)
+    model.fit([train_X], train_Y, epochs=15, batch_size=64, validation_split=0.1)
 
     # 保存结果
     model.save("model.h5")

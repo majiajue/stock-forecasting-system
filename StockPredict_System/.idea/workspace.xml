@@ -5,27 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/ModelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/QuestionnaireController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/questionnaire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/normalize.npy" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/normalize.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/utils/myPlugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/utils/myPlugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/utils/request.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/EditInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/EditInfo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Questionnaire.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Questionnaire.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +148,9 @@
       <workItem from="1649729582578" duration="4772000" />
       <workItem from="1649747820410" duration="4318000" />
       <workItem from="1649764696066" duration="1766000" />
-      <workItem from="1649768950698" duration="316000" />
+      <workItem from="1649768950698" duration="1243000" />
+      <workItem from="1649816471142" duration="3597000" />
+      <workItem from="1649830461220" duration="213000" />
     </task>
     <servers />
   </component>

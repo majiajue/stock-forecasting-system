@@ -49,31 +49,31 @@ export default {
   mounted: function () {
     this.$get("/questionnaire/get").then((result) => {
       this.questionnaire = result
+
+      // 初始化问卷参数
+      for (var i = 0; i < this.questionnaire.length; i++) {
+        if (this.questionnaire[i]['type'] === 'radio') {
+          this.answer.push(null)
+          var maxInt = 0
+          for (var j = 0; j < this.questionnaire[i]['data'].length; j++) {
+            var temp = parseInt(this.questionnaire[i]['data'][j]['value']);
+            if (temp > maxInt) {
+              maxInt = temp
+            }
+          }
+          this.total_score += temp;
+        } else if (this.questionnaire[i]['type'] === 'checkbox') {
+          this.questionnaire[i]['title'] += ' (多选)';
+          this.answer.push([]);
+
+          for (var j = 0; j < this.questionnaire[i]['data'].length; j++) {
+            this.total_score += parseInt(this.questionnaire[i]['data'][j]['value']);
+          }
+        }
+      }
     }).catch((err) => {
       console.error(err);
     });
-
-    // 初始化问卷参数
-    for (var i = 0; i < this.questionnaire.length; i++) {
-      if (this.questionnaire[i]['type'] === 'radio') {
-        this.answer.push(null)
-        var maxInt = 0
-        for (var j = 0; j < this.questionnaire[i]['data'].length; j++) {
-          var temp = parseInt(this.questionnaire[i]['data'][j]['value']);
-          if (temp > maxInt) {
-            maxInt = temp
-          }
-        }
-        this.total_score += temp;
-      } else if (this.questionnaire[i]['type'] === 'checkbox') {
-        this.questionnaire[i]['title'] += ' (多选)';
-        this.answer.push([]);
-
-        for (var j = 0; j < this.questionnaire[i]['data'].length; j++) {
-          this.total_score += parseInt(this.questionnaire[i]['data'][j]['value']);
-        }
-      }
-    }
 
   },
   computed: {
