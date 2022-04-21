@@ -21,6 +21,14 @@
     </properties>
 
     <dependencies>
+
+        <!--MyBatis-Plus代码生成器需要的依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
         <!-- MyBatis-plus -->
         <dependency>
             <groupId>com.baomidou</groupId>

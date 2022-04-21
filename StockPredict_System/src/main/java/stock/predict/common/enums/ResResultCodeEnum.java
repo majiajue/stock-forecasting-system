@@ -4,8 +4,9 @@ package stock.predict.common.enums;
 /**
  * 返回值的code定义
  *
- * @author wuque
- * @since 2021.09.29
+ * @author wangzhewen
+ * @time 2022/3/26 13:03
+ * @description: TODO
  */
 public enum ResResultCodeEnum {
 

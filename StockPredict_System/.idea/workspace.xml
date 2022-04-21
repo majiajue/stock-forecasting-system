@@ -5,13 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/normalize.npy" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/normalize.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/config/SggCodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/SuggestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/Suggest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/mapper/SuggestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/ISuggestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/SuggestServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/common/enums/ResResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/common/enums/ResResultCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/AboutView.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/EditInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/EditInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Questionnaire.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Questionnaire.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,25 +79,41 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BackUps/StockPredict_System" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/stock/predict/controller" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\StockPredict_System\src\main\java\stock\predict\common" />
-      <recent name="E:\StockPredict_System\src\main\resources" />
-      <recent name="E:\StockPredict_System\src\main\java\stock\predict\service" />
-      <recent name="E:\StockPredict_System\src\main\java\stock\predict\dao\mapper" />
-      <recent name="E:\StockPredict_System\src\main\java\stock\predict\dao\controller" />
+      <recent name="E:\Git\GitHub\stock-forecasting-system\StockPredict_System\src\main\java\stock\predict\controller" />
+      <recent name="E:\Git\GitHub\stock-forecasting-system\StockPredict_System\src\main\java\stock\predict\service\impl" />
+      <recent name="E:\Git\GitHub\stock-forecasting-system\StockPredict_System\src\main\java\stock\predict\service" />
+      <recent name="E:\Git\GitHub\stock-forecasting-system\StockPredict_System\src\main\java\stock\predict\dao\mapper" />
+      <recent name="E:\Git\GitHub\stock-forecasting-system\StockPredict_System\src\main\java\stock\predict\dao\entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="stock.predict.config" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SystemApplication">
+    <configuration name="SggCodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stock.predict.config.SggCodeGenerator" />
+      <module name="StockPredict_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stock.predict.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SampleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockPredict_System" />
       <option name="PACKAGE_NAME" value="" />
@@ -122,6 +149,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SystemApplication" />
+        <item itemvalue="Application.SggCodeGenerator" />
         <item itemvalue="JUnit.SampleTest" />
         <item itemvalue="JUnit.SampleTest.testSelect" />
       </list>
@@ -151,6 +179,19 @@
       <workItem from="1649768950698" duration="1243000" />
       <workItem from="1649816471142" duration="3597000" />
       <workItem from="1649830461220" duration="213000" />
+      <workItem from="1649934960848" duration="661000" />
+      <workItem from="1649943575188" duration="650000" />
+      <workItem from="1649944466175" duration="550000" />
+      <workItem from="1649985757553" duration="5000" />
+      <workItem from="1649987088418" duration="1408000" />
+      <workItem from="1650015133803" duration="310000" />
+      <workItem from="1650091002117" duration="7000" />
+      <workItem from="1650334715091" duration="798000" />
+      <workItem from="1650335837889" duration="3831000" />
+      <workItem from="1650345674017" duration="206000" />
+      <workItem from="1650347250123" duration="218000" />
+      <workItem from="1650347676463" duration="217000" />
+      <workItem from="1650347923054" duration="8340000" />
     </task>
     <servers />
   </component>

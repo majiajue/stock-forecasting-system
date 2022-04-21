@@ -1,5 +1,8 @@
 package stock.predict.dao.entity;
 
+import java.time.LocalDateTime;
+import java.io.Serializable;
+
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -7,38 +10,30 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
-import java.time.LocalDate;
-
 /**
  * <p>
- * 用户表
+ * 用户建议
  * </p>
  *
  * @author wangzhewen
- * @since 2022-03-07
+ * @since 2022-04-19
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("user")
-public class User implements Serializable {
+@TableName("suggest")
+public class Suggest implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private String id;
 
-    private String name;
+    private LocalDateTime createTime;
 
-    @NotBlank(message = "密码不能为空")
-    private String password;
+    private String createBy;
 
-    private LocalDate birthday;
+    private String recommendation;
 
-    /**
-     * 问卷得分
-     */
-    private Float score;
+
 }

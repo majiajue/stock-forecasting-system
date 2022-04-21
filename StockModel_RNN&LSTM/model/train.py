@@ -58,8 +58,10 @@ def attention_model():
     x = MaxPooling1D(pool_size=2, strides=None, padding='valid')(x)
 
     # 时序分析
-    lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
-    lstm_out = Dropout(0.3)(lstm_out)
+    x = LSTM(lstm_units, return_sequences=True)(x)
+    x = Dropout(0.3)(x)
+    x = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
+    lstm_out = Dropout(0.3)(x)
     # lstm_out = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
     # lstm_out = Dropout(0.3)(lstm_out)
     # lstm_out.shape: (batch_size, time_steps, input_dim)
@@ -110,7 +112,7 @@ if __name__ == '__main__':
     train_X, train_Y = create_dataset(data, TIME_STEPS)
 
     model = attention_model()
-    model.summary()
+    # model.summary()
     model.compile(optimizer='adam', loss='mse')
     model.fit([train_X], train_Y, epochs=15, batch_size=64, validation_split=0.1)
 

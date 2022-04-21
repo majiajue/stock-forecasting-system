@@ -3,9 +3,18 @@
     <span>股票代码：</span>
     <el-input placeholder="请输入股票代码"
               v-model="request.data"
-              style="width: 200px; padding-right: 8px"
+              style="width: 100px; padding-right: 8px"
               clearable>
     </el-input>
+    <el-select v-model="value"
+               placeholder="股票证券公司"
+               style="width: 100px; padding-right: 8px">
+      <el-option v-for="item in options"
+                 :key="item.value"
+                 :label="item.label"
+                 :value="item.value">
+      </el-option>
+    </el-select>
     <el-button type="primary"
                size="medium"
                @click="getPredictData"
@@ -49,11 +58,13 @@
 <style>
 #charts > .charts_in {
   padding: 15px;
-  width: 600px;
+  width: 560px;
   height: 400px;
   margin: auto;
+  float: left;
 }
-.risk {
+.risk,
+.el-button {
   margin: 15px 0;
 }
 </style>
@@ -100,7 +111,7 @@ export default {
   data () {
     return {
       request: {
-        data: "601058.SH",
+        data: "601058",
         predictDate: 30,
       },
       respond: null,
@@ -108,11 +119,26 @@ export default {
       risk: null,
       suggestion: null,
       score: null,
+
+      options: [{
+        value: '.SZ',
+        label: '深股通'
+      }, {
+        value: '.SH',
+        label: '沪股通'
+      }, {
+        value: '.HK',
+        label: '港股通',
+        disabled: true
+      }],
+      value: '.SH',
+      stock: "601058",
     };
   },
   methods: {
     getPredictData () {
       this.logining = true;
+      this.request.data = this.stock + this.value;
       this.$get("/data", this.request).then((result) => {
         this.respond = result.value.data;
         this.initCharts();
