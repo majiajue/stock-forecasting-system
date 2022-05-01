@@ -11,7 +11,7 @@
       </el-form-item>
 
       <el-form-item label="用户密码">
-        <el-input type="password"
+        <el-input type="text"
                   v-model="user.password"
                   auto-complete="off"
                   placeholder="请填写密码"></el-input>

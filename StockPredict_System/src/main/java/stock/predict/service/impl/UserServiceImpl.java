@@ -18,7 +18,7 @@ import stock.predict.service.IUserService;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
-    @Override12
+    @Override
     public User login(String name, String password) {
         return this.lambdaQuery()
                 .eq(User::getName, name)

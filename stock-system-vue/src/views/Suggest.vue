@@ -24,7 +24,7 @@ export default {
   name: 'suggest',
   data () {
     return {
-      textarea: "意见",
+      textarea: "",
       logining: false
     }
   },

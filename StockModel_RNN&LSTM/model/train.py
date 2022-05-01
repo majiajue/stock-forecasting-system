@@ -13,6 +13,9 @@ import tushare as ts
 from model.util import NormalizeMult, create_dataset
 
 
+# 开发了两个注意力机制，参考了如下两个网站：
+# https://blog.csdn.net/weixin_41888257/article/details/114888547
+# https://github.com/philipperemy/keras-attention-mechanism
 def attention_3d_block(inputs, SINGLE_ATTENTION_VECTOR=False):
     input_dim = int(inputs.shape[2])
     a = inputs
@@ -30,9 +33,6 @@ def attention_3d_block(inputs, SINGLE_ATTENTION_VECTOR=False):
     return output_attention_mul
 
 
-# 注意力机制的另一种写法，适合上述报错使用。
-# 借鉴:https://blog.csdn.net/weixin_41888257/article/details/114888547
-# https://github.com/philipperemy/keras-attention-mechanism
 def attention_3d_block2(inputs, SINGLE_ATTENTION_VECTOR=False):
     time_steps = K.int_shape(inputs)[1]
     input_dim = K.int_shape(inputs)[2]
@@ -54,11 +54,11 @@ def attention_model():
 
     # 特征提取
     x = Conv1D(filters=64, kernel_size=2, activation='relu')(inputs)  # , padding = 'same'
-    x = Dropout(0.3)(x)
     x = MaxPooling1D(pool_size=2, strides=None, padding='valid')(x)
+    x = Dropout(0.3)(x)
 
     # 时序分析
-    x = LSTM(lstm_units, return_sequences=True)(x)
+    x = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
     x = Dropout(0.3)(x)
     x = Bidirectional(LSTM(lstm_units, return_sequences=True))(x)
     lstm_out = Dropout(0.3)(x)
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     model = attention_model()
     # model.summary()
     model.compile(optimizer='adam', loss='mse')
-    model.fit([train_X], train_Y, epochs=15, batch_size=64, validation_split=0.1)
+    model.fit([train_X], train_Y, epochs=20, batch_size=64, validation_split=0.1)
 
     # 保存结果
     model.save("model.h5")

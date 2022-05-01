@@ -50,22 +50,22 @@ export default {
       logining: false,
       // 表单数据对象
       ruleForm: {
-        username: "admin",
-        password: "123456",
+        username: "",
+        password: "",
       },
       // 表单验证规则
       rules: {
         username: [
           {
             required: true,
-            message: "please enter your account",
+            message: "请输入您的账号",
             trigger: "blur",
           },
         ],
         password: [
           {
             required: true,
-            message: "enter your password",
+            message: "请输入您的密码",
             trigger: "blur"
           },
         ],

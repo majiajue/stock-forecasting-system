@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f66c822-5d63-494e-b36f-2e00f8a8605a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/config/SggCodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/controller/SuggestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/Suggest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/mapper/SuggestMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/ISuggestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/SuggestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/model.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/model/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StockModel_RNN&amp;LSTM/templates/getData.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/common/enums/ResResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/common/enums/ResResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/dao/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/predict/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/components/SideBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/AboutView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stock-system-vue/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../stock-system-vue/src/views/Register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +36,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://D:/Tools/repository/com/baomidou/mybatis-plus-core/3.5.1/mybatis-plus-core-3.5.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -79,7 +67,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/stock/predict/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -192,6 +180,9 @@
       <workItem from="1650347250123" duration="218000" />
       <workItem from="1650347676463" duration="217000" />
       <workItem from="1650347923054" duration="8340000" />
+      <workItem from="1650763459233" duration="38000" />
+      <workItem from="1650763509175" duration="6000" />
+      <workItem from="1651413468023" duration="1458000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@
   <div>
     <span>股票代码：</span>
     <el-input placeholder="请输入股票代码"
-              v-model="request.data"
+              v-model="stock"
               style="width: 100px; padding-right: 8px"
               clearable>
     </el-input>
@@ -111,7 +111,7 @@ export default {
   data () {
     return {
       request: {
-        data: "601058",
+        data: "",
         predictDate: 30,
       },
       respond: null,
@@ -131,8 +131,8 @@ export default {
         label: '港股通',
         disabled: true
       }],
-      value: '.SH',
-      stock: "601058",
+      value: '.SZ',
+      stock: "",
     };
   },
   methods: {
