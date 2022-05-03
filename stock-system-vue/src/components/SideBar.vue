@@ -32,8 +32,12 @@
             </router-link>
           </el-menu-item-group>
           <el-menu-item-group title="关于系统">
-            <el-menu-item index="3-2">关于我们</el-menu-item>
-            <el-menu-item index="3-3">意见反馈</el-menu-item>
+            <router-link to="/about">
+              <el-menu-item index="3-2">关于我们</el-menu-item>
+            </router-link>
+            <router-link to="/suggest">
+              <el-menu-item index="3-3">意见反馈</el-menu-item>
+            </router-link>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>

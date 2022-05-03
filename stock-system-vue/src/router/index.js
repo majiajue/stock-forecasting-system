@@ -32,8 +32,12 @@ const routes = [
         component: () => import('../views/Home.vue')
       },
       {
+        path: 'suggest',
+        component: () => import('../views/Suggest.vue')
+      },
+      {
         path: 'about',
-        component: () => import('../views/AboutView.vue')
+        component: () => import('../views/About.vue')
       },
       {
         path: 'qs',

@@ -11,7 +11,7 @@
       </el-form-item>
 
       <el-form-item label="用户密码">
-        <el-input type="password"
+        <el-input type="text"
                   v-model="user.password"
                   auto-complete="off"
                   placeholder="请填写密码"></el-input>
@@ -52,9 +52,18 @@ export default {
 
   methods: {
     onSubmit () {
-      this.$post("/user/update", this.user);
-      sessionStorage.setItem("user", JSON.stringify(this.user));
-      this.$router.push({ path: "/" });
+      this.$post("/user/update", this.user).then((result) => {
+        sessionStorage.setItem("user", JSON.stringify(this.user));
+        this.$message({
+          type: 'success',
+          message: '修改成功!'
+        });
+      }).catch((err) => {
+        this.$message({
+          type: 'info',
+          message: '修改出错' + err
+        });
+      });
     }
   }
 }

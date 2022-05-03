@@ -2,10 +2,19 @@
   <div>
     <span>股票代码：</span>
     <el-input placeholder="请输入股票代码"
-              v-model="request.data"
-              style="width: 200px; padding-right: 8px"
+              v-model="stock"
+              style="width: 100px; padding-right: 8px"
               clearable>
     </el-input>
+    <el-select v-model="value"
+               placeholder="股票证券公司"
+               style="width: 100px; padding-right: 8px">
+      <el-option v-for="item in options"
+                 :key="item.value"
+                 :label="item.label"
+                 :value="item.value">
+      </el-option>
+    </el-select>
     <el-button type="primary"
                size="medium"
                @click="getPredictData"
@@ -13,8 +22,27 @@
       上传
       <i class="el-icon-upload el-icon--right"></i>
     </el-button>
+
     <div id="charts"
          v-show="this.respond!=null">
+
+      <div class="risk">
+        <span>您的风险类型为：</span>
+        <el-tag :key="risk"
+                effect="plain">
+          {{ risk }}
+        </el-tag>
+      </div>
+
+      <div class="risk">
+        <span>系统给予的建议：</span>
+        <el-tag :key="suggestion"
+                type="danger"
+                effect="plain">
+          {{ suggestion }}
+        </el-tag>
+      </div>
+
       <div class="charts_in"
            id="chart"></div>
       <div class="charts_in"
@@ -30,9 +58,14 @@
 <style>
 #charts > .charts_in {
   padding: 15px;
-  width: 600px;
+  width: 560px;
   height: 400px;
   margin: auto;
+  float: left;
+}
+.risk,
+.el-button {
+  margin: 15px 0;
 }
 </style>
 
@@ -44,22 +77,72 @@ export default {
   components: {
     HelloWorld,
   },
+  created: function () {
+    var score = JSON.parse(
+      window.sessionStorage.getItem("user")
+    )["score"]
+    this.score = score;
+
+    // 判断风险类型
+    switch (true) {
+      case (score < 0):
+        this.risk = "请进行问卷调查";
+        break;
+      case (score < 0.2):
+        this.risk = "保守型";
+        break;
+      case (score < 0.4):
+        this.risk = "稳健型";
+        break;
+      case (score < 0.6):
+        this.risk = "平衡型";
+        break;
+      case (score < 0.8):
+        this.risk = "成长型";
+        break;
+      case (score < 1):
+        this.risk = "进取型";
+        break;
+      default:
+        this.risk = "未知";
+        break;
+    }
+  },
   data () {
     return {
       request: {
-        data: "601058.SH",
+        data: "",
         predictDate: 30,
       },
       respond: null,
-      logining: false
+      logining: false,
+      risk: null,
+      suggestion: null,
+      score: null,
+
+      options: [{
+        value: '.SZ',
+        label: '深股通'
+      }, {
+        value: '.SH',
+        label: '沪股通'
+      }, {
+        value: '.HK',
+        label: '港股通',
+        disabled: true
+      }],
+      value: '.SZ',
+      stock: "",
     };
   },
   methods: {
     getPredictData () {
       this.logining = true;
+      this.request.data = this.stock + this.value;
       this.$get("/data", this.request).then((result) => {
         this.respond = result.value.data;
         this.initCharts();
+        this.putSuggestion();
       }).catch((err) => {
         console.error();
       });
@@ -187,6 +270,34 @@ export default {
         ],
       };
       myChart3.setOption(option);
+    },
+    putSuggestion () {
+      var sum = 0;
+      for (var i = 0; i < this.respond.length; i++) {
+        sum += this.respond[i][3]
+      }
+      sum /= this.respond.length;
+      var data = 1.0 * this.score * sum;
+      console.log(data);
+
+      // 判断建议类型
+      switch (true) {
+        case (data < -0.5):
+          this.suggestion = "不应买入";
+          break;
+        case (data < 0):
+          this.suggestion = "不建议买入";
+          break;
+        case (data < 0.5):
+          this.suggestion = "可以尝试买入";
+          break;
+        case (data < 1):
+          this.suggestion = "建议买入";
+          break;
+        default:
+          this.suggestion = "未知";
+          break;
+      }
     },
   },
 };

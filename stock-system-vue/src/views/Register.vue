@@ -1,6 +1,5 @@
 <template>
   <div class="login-container">
-    {{user}}
     <el-form :model="user"
              :rules="rules"
              status-icon
