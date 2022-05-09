@@ -43,7 +43,7 @@ def attention_3d_block2(inputs, SINGLE_ATTENTION_VECTOR=False):
         a = RepeatVector(input_dim)(a)
 
     a_probs = Permute((2, 1))(a)
-    # 乘上了attention权重，但是并没有求和，好像影响不大?
+    # 乘上attention权重
     output_attention_mul = Multiply()([inputs, a_probs])
     return output_attention_mul
 
@@ -84,7 +84,7 @@ def getData():
     # 查询当前所有正常上市交易的股票列表
     # SH沪股通SZ深股通
     df = pro.hs_const(hs_type='SH')
-    df = df[0:30]
+    df = df[0:1]
 
     dataset = np.empty((0, 6), dtype=float)
     for name in np.array(df['ts_code']):
@@ -100,7 +100,6 @@ def getData():
 if __name__ == '__main__':
     # 加载数据
     data = getData()
-    print(data.shape)
 
     INPUT_DIMS = 6
     OUTPUT_DIMS = 6
